@@ -1,0 +1,4 @@
+# CSS :nth-child Selector and Dynamic Content
+This repository demonstrates a common issue encountered when using the CSS `:nth-child(n)` selector with dynamically changing content.  The `:nth-child` selector selects elements based on their position relative to their siblings.  However, when elements are added or removed from the DOM after the page has loaded, the selector's logic might not update correctly, leading to inconsistent or unexpected styling.
+
+The `dynamic-styling-bug.css` file shows the problematic code, and `dynamic-styling-solution.css` provides a potential fix using JavaScript to re-apply styles when the DOM changes.  More robust solutions might involve using alternative techniques for styling elements based on their position or state.
