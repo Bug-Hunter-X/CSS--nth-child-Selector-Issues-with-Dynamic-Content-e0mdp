@@ -1,0 +1,31 @@
+Instead of solely relying on `:nth-child(n)`, use JavaScript to add or remove classes to elements based on their position or other criteria.  Then, style these classes using CSS.
+
+```javascript
+const parentElement = document.getElementById('myParent');
+
+function updateStyling() {
+  Array.from(parentElement.children).forEach((child, index) => {
+    if (index % 2 === 0) {
+      child.classList.add('even');
+      child.classList.remove('odd');
+    } else {
+      child.classList.add('odd');
+      child.classList.remove('even');
+    }
+  });
+}
+
+parentElement.addEventListener('DOMSubtreeModified', updateStyling);
+
+updateStyling(); // Initial Styling
+```
+
+```css
+/* dynamic-styling-solution.css */
+.even { /* Styles for even-indexed elements */
+  background-color: lightblue;
+}
+.odd { /* Styles for odd-indexed elements */
+  background-color: lightcoral;
+}
+```
